@@ -4,9 +4,7 @@
 
 use diesel::prelude::*;
 
-/**
- * Struct to represent a guild member
- */
+/// Struct to represent a guild member
 #[derive(Queryable, Selectable)]
 #[diesel(table_name = crate::db::schema::users)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
@@ -19,9 +17,7 @@ pub struct User {
 }
 
 
-/**
- * Struct to represent an ingame guild
- */
+/// Struct to represent an ingame guild
 #[derive(Queryable, Selectable)]
 #[diesel(table_name = crate::db::schema::guilds)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
@@ -31,9 +27,7 @@ pub struct Guild {
 }
 
 
-/**
- * Struct to represent an ingame item
- */
+/// Struct to represent an ingame item
 #[derive(Queryable, Selectable)]
 #[diesel(table_name = crate::db::schema::items)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
@@ -44,9 +38,7 @@ pub struct Item {
 }
 
 
-/**
- * Struct to represent an ingame crating reciep
- */
+/// Struct to represent an ingame crating reciep
 #[derive(Queryable, Selectable)]
 #[diesel(table_name = crate::db::schema::recieps)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
@@ -58,9 +50,7 @@ pub struct Reciep {
 }
 
 
-/**
- * Struct to represent a part of a reciep
- */
+/// Struct to represent a part of a reciep
 #[derive(Queryable, Selectable)]
 #[diesel(belongs_to(Reciep))]
 #[diesel(table_name = crate::db::schema::reciep_items)]
@@ -72,9 +62,7 @@ pub struct ReciepItem {
 }
 
 
-/**
- * Struct to represent an ingame event
- */
+/// Struct to represent an ingame event
 #[derive(Queryable, Selectable)]
 #[diesel(table_name = crate::db::schema::events)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
@@ -94,9 +82,7 @@ pub struct Event {
 }
 
 
-/**
- * Struct to represent results of an event for a specific guilds
- */
+/// Struct to represent results of an event for a specific guilds
 #[derive(Queryable, Selectable)]
 #[diesel(table_name = crate::db::schema::event_results)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
