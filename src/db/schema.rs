@@ -64,9 +64,6 @@ diesel::table! {
     }
 }
 
-joinable!(reciep_items -> recieps (reciep_id));
-allow_tables_to_appear_in_same_query!(reciep_items, recieps);
-
 
 /*
  * Table that holds information about an event
@@ -97,7 +94,7 @@ diesel::table! {
 
 
 /*
- * Table that holds event result information for the event with matching event_id 
+ * Table that holds event result information of the guild with matching guild_id for the event with matching event_id 
  */
 diesel::table! {
     event_results (event_id, guild_id) {
@@ -109,7 +106,10 @@ diesel::table! {
     }
 }
 
+
 joinable!(event_results -> events (event_id));
 joinable!(event_results -> guilds (guild_id));
+joinable!(reciep_items -> recieps (reciep_id));
 allow_tables_to_appear_in_same_query!(event_results, events);
 allow_tables_to_appear_in_same_query!(event_results, guilds);
+allow_tables_to_appear_in_same_query!(reciep_items, recieps);

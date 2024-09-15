@@ -95,7 +95,7 @@ pub struct Event {
 
 
 /**
- * Struct to represent results of an event
+ * Struct to represent results of an event for a specific guilds
  */
 #[derive(Queryable, Selectable)]
 #[diesel(table_name = crate::db::schema::event_results)]
