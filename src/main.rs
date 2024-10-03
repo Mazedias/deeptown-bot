@@ -1,6 +1,8 @@
 mod db;
 mod bot;
 mod logic;
+mod api;
+mod util;
 
 use dotenv::dotenv;
 use std::env;
